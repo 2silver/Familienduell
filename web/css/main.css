@@ -1,3 +1,150 @@
+html,
+body {
+  height: 100%;
+}
+
+body.start,
+body.display {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.fullBg {
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  height:100%;
+  width:100%;
+}
+.screen {
+
+  position:relative;
+  /*
+  width:1000px;
+  */
+  height:500px;
+  background-color:#525463;
+  font-family: monospace;
+  font-size: 22px;
+  letter-spacing: 6px;
+}
+#display {
+  position:relative;
+}
+#blackScreen {
+  display:none;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  width:100vw;
+  height:100vh;
+  background-color: #000;
+  z-index:6;
+}
+#notConnected,
+#connected {
+  display:none;
+  position:absolute;
+  top:0;
+  left:0;
+  margin: 5px;
+  color:white;
+  font-size:9px;
+}
+#notConnected {
+  display:block;
+}
+#connected {
+  display:block;
+  color:black;
+}
+
+/*
+******************
+       WEB
+******************
+*/
+
+/*   Intro   */
+#intro {
+  background: white url(../img/logo.png) no-repeat center center;
+  z-index:4;
+}
+#schweinchenImg {
+  background: #1E211F url(../img/schweinchen.jpg) no-repeat center center;
+  z-index:3;
+}
+
+#answers,
+#result {
+}
+
+#result {
+  position:relative;
+  top:-140px;
+  font-size:30px;
+  text-align:right;
+}
+#result .controller {
+  font-size:20px;
+}
+#answers {
+  height:450px;
+}
+#answers .row {
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+#SumRes { display:inline-block!important;}
+#footer {
+  height: 50px;
+  color: rgb(100, 100, 100);
+  font-size: 38px;
+  display: block;
+  background: rgb(174, 177, 48);
+  border-top:5px solid #525463;
+  box-shadow: 0px -10px 0px 0px rgb(174, 177, 48);
+}
+
+.xmarker {
+  font-size: 38px;
+  background-color:white;
+  height: 50px;
+  color: rgb(127, 115, 115);
+  background-color:#525463;
+}
+.xmarker.right {
+  text-align:right;
+}
+/*
+******************
+    CONTROLLER
+******************
+*/
+
+
+
+
+
+
+
+
+/*
+old
+*/
+
+
+
+
 .textColor  {
     color:#aeb130;
     font-weight:bold;
@@ -24,8 +171,4 @@
 
 .markOnHover{
 	color:gray;
-}
-
-.noIntro {
-	display:none;
 }

@@ -8,12 +8,12 @@ var fs = require('fs');
 wss.on('connection', function(ws) {
 	subscribers.push(ws);
 	ws.send(subscribers.length-1 + '###thatsYou');
-	
+
 	for(var i=0;i<subscribers.length;i++) {
 		if(subscribers[i] != null)
 			broadcastMessage(i, "connected");
 	}
-	
+
 	console.log("~~~~~~~~ WELCOME TO SERVER ~~~~~~ s:"+subscribers.length);
     ws.on('message', function(message) {
     	console.log('msg: ' + message);
@@ -37,7 +37,7 @@ wss.on('connection', function(ws) {
 		    			broadcastMessage(getClientId(), "file###"+parts[2]+"###"+content);
 		    		}
 	    		});
-	    	}	    		
+	    	}
 	    }
     });
 
@@ -47,7 +47,7 @@ wss.on('connection', function(ws) {
 		broadcastMessage(cId, "disconnected");
 		console.log('Subscriber left: ' + subscribers.length + " total.\n");
 	});
-	
+
 	function getClientId() {
 		for(var i=0;i<subscribers.length;i++) {
 			if(subscribers[i] == ws)
@@ -77,12 +77,12 @@ function writeInFile(filename, content, callback) {
 	    	callback("success");
 	        console.log("The file '"+filename+"' was saved!");
 	    }
-	}); 
+	});
 }
 
 function readFile(filename, callback) {
 	console.log("going to read file:"+filename);
-	fs.readFile(filename, 'utf8', function (err,data) {
+	fs.readFile(filename, function (err,data) {
 		console.log("file:"+filename+" read callback done!");
 		if (err) {
 			console.log(err);

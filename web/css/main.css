@@ -1,3 +1,9 @@
+#answers .row,
+#footer span {
+  color: white;
+}
+
+
 html,
 body {
   height: 100%;
@@ -31,7 +37,7 @@ body.display {
   height:500px;
   background-color:#525463;
   font-family: monospace;
-  font-size: 22px;
+  font-size: 30px;
   letter-spacing: 6px;
 }
 #display {
@@ -92,9 +98,13 @@ body.display {
   top:-140px;
   font-size:30px;
   text-align:right;
+  padding-right: 38px;
 }
 #result .controller {
   font-size:20px;
+}
+.row.controller {
+  margin-top:50px;
 }
 #answers {
   height:450px;

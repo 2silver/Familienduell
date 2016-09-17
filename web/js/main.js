@@ -1,4 +1,4 @@
-﻿var fragen = null;
+var fragen = null;
 var intro = null;
 var introVolume = 1;
 var jeopardy = null;
@@ -256,7 +256,7 @@ function loadQuestionToGui(index) {
           '<div class="points col-sm-1"></div>' +
           '</div>');
         if (display) {
-          oneLine.find(".answer").text("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
+          oneLine.find(".answer").html("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
           oneLine.find(".points").text("--");
         } else {
           oneLine.find(".answer").html('<span class="markOnHover">' + getAnswerString(fragen[index]["antworten"][i]["antwort"]) + '</span>');
@@ -281,6 +281,7 @@ function loadQuestionToGui(index) {
 
 function setAnswer(index, answer) {
   answer = getAnswerString(answer);
+  console.log(answer);
   var el = $($("#answers").find(".answer")[index]);
   el.empty();
   if (sounds && (display || serverSound)) {
@@ -320,7 +321,8 @@ function getAnswerString(str) {
     str += "_";
   }
   anz = str.length;
-  while (str.length < 40) {
+  // types after answer printed
+  while (str.length < 30) {
     str += " _";
   }
   return str;

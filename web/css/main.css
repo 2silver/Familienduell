@@ -113,7 +113,7 @@ body.display {
   padding-top:10px;
   padding-bottom:10px;
 }
-
+.pointsRight { text-align:right; }
 #SumRes { display:inline-block!important;}
 #footer {
   height: 50px;
